@@ -5,7 +5,7 @@
 In this paper, the authors proposed adversarial evaluation on Stanford Question Answering Datset (SQuAD). Without confusing humans, the generated sentance distrated the models and their average F1 score dropped from 75% to 36%. This indicates that nowadays
 the reading comprehension system techniques remain a large gap of improvement.
 ## 
-![Image](https://github.com/mandyfu84/CS269_PaperSummary/blob/master/1.png)
+![Image](CS269_PaperSummary/1.png)
 
 ## Welcome to GitHub Pages
 
