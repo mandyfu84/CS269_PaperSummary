@@ -27,16 +27,24 @@ Next they propose two concatenative adversaries and two of their variants.
 
 ### ADDSENT
 *ADDSENT* generates a sentence that is similar to the question but does not condradict the answer. There are four steps in *ADDSENT*.
-```markdown
 1.  Apply semantics-altering perturbation to the question. 
-```
-    What city did Tesla move to in 1880? -> What city did Tadakatsu move to in 1881?
+    `What city did Tesla move to in 1880? -> What city did Tadakatsu move to in 1881?`
 2.  Create a fake answer that has the same type of the original answer.
     `Prague -> Chicago`
 3.  Combine the mutated question and the fake answer into declarative form.
     `Tadakatsu moved the city of Chicago to in 1881.`
 4.  Crowdworkers fix the error in the sentences.
     `Tadakatsu moved to the city of Chicago in 1881.`
+    
+### ADDONESENT
+*ADDONESENT* adds a random human-approve sentence. It does not require any queries to the model. 
+
+### ADDANY
+*ADDANY* chooses *d* words 
+
+### ADDCOMMON
+
+## Experiments
 
 
 pertubations 
