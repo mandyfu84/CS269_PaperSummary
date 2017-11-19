@@ -16,6 +16,13 @@ Images from Szegedy et al. (2014).
 
 As we can see in the above table, adding adversaries in image classifications makes the model consider two images are diffirent while the perturbations do not change. For reading comprehension tasks, adversaries causes the model to ignore the semantics changes. 
 
+## Concatenative Adversaries
+In this paper, the authors did not use paraphrasing as adversaries, since it is challenging to edit sentence without changing its meaning. Instead, they use concatentive adversaries. The form is listed below:
+```markdown
+(p + s, q, a)
+```
+
+pertubations 
 
 ## Welcome to GitHub Pages
 
