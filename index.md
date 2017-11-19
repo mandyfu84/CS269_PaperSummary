@@ -21,6 +21,18 @@ In this paper, the authors did not use paraphrasing as adversaries, since it is 
 ```markdown
 (p + s, q, a)
 ```
+, where p is a paragraph, s is a additional sentence, q is the question and a is the answer.
+
+Next they propose two concatenative adversaries and two of their variants. 
+
+### ADDSENT
+*ADDSENT* generates a sentence that is similar to the question but does not condradict the answer. There are four steps in *ADDSENT*.
+
+1. 
+2. 
+3. 
+4. 
+
 
 pertubations 
 
