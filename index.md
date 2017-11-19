@@ -40,7 +40,8 @@ Next they propose two concatenative adversaries and two of their variants.
     Tadakatsu moved the city of Chicago to in 1881.
     ```
 4.  Crowdworkers fix the error in the sentences.
-    ```Tadakatsu moved to the city of Chicago in 1881.
+    ```
+    Tadakatsu moved to the city of Chicago in 1881.
     ```
     
 ### ADDONESENT
