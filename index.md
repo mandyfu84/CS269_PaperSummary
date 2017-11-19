@@ -7,6 +7,14 @@ the reading comprehension system techniques remain a large gap of improvement.
 ## 
 ![Image](/1.png)
 
+## SQuAD
+Stanford Question Answering Datset (SQuAD) is a reading comprehension dataset, consisting of questions posed by crowdworkers on a set of Wikipedia articles. Each question is refer to a paragraph and the answer is a span in the paragraph.
+
+##Adversarial Examples
+![Image](/examples.png){: .center-image }
+Images from Szegedy et al. (2014).
+
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/mandyfu84/CS269_PaperSummary/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
