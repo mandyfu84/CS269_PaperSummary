@@ -54,6 +54,8 @@ Next they propose two concatenative adversaries and two of their variants.
 3. Upade `wi` to minimze the F1 score of the model's output.
 
 ### ADDCOMMON
+*ADDCOMMON* is same as *ADDANY* but only adds common words.
+
 
 ## Experiments
 
