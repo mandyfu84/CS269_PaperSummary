@@ -1,5 +1,10 @@
-# Adversarial Examples for Evaluating Reaing Comprehension Systems
+# Summary of Adversarial Examples for Evaluating Reaing Comprehension Systems
 ### by Robin Jia and Percy Liang
+
+## Abstrast
+In this paper, the authors proposed adversarial evaluation on Stanford Question Answering Datset (SQuAD). Without confusing humans, the generated sentance distrated the models and their average F1 score dropped from 75% to 36%. This indicates that nowadays
+the reading comprehension system techniques remain a large gap of improvement.
+## 
 
 ## Welcome to GitHub Pages
 
