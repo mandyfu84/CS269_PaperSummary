@@ -14,6 +14,8 @@ Stanford Question Answering Datset (SQuAD) is a reading comprehension dataset, c
 ![Image](/examples.png){: .center-image }
 Images from Szegedy et al. (2014).
 
+As we can see in the above table, adding adversaries in image classifications makes the model consider two images are diffirent while the perturbations do not change. For reading comprehension tasks, adversaries causes the model to ignore the semantics changes. 
+
 
 ## Welcome to GitHub Pages
 
