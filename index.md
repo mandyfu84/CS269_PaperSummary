@@ -5,10 +5,13 @@
 In this paper, the authors proposed adversarial evaluation on Stanford Question Answering Dataset (SQuAD). Without confusing humans, the generated sentence distracted the models and their average F1 score dropped from 75% to 36%. This indicates that nowadays
 the reading comprehension system techniques remain a large gap of improvement.
 
-## SQuAD
-Stanford Question Answering Dataset (SQuAD) is a reading comprehension dataset, consisting of questions posed by crowdworkers on a set of Wikipedia articles. Each question refers to a paragraph and the answer is a span in the paragraph.
+## Introduction
+### SQuAD
+Stanford Question Answering Dataset [(SQuAD)](https://rajpurkar.github.io/SQuAD-explorer/) is a reading comprehension dataset, consisting of questions posed by crowdworkers on a set of Wikipedia articles. Each question refers to a paragraph and the answer is a span in the paragraph. Currently, the most accurate model achieves F1 score of 86.45% while human performance is 91.20%.
 
-## Adversarial Examples
+### Adversarial Examples
+In computer vision, small perturbations were added on image but did not change the label of it. However, in a paragraph, even a word change can differ the meaning. Hence, they generate sentence and append it to the end of the paragraph to fool the model without confusing human. While models in computer vision suffer from *oversensitivity* to noise in images, this paper focuses on *overstablilty*, which means that a model cannot determine which sentence truely answers the question from two alike sentences.
+
 ![Image](/examples.png){: .center-image height="50%" width="50%"}
 
 Images from Szegedy et al. (2014).
