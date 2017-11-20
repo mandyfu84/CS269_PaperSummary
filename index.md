@@ -64,6 +64,7 @@ Next, they propose two concatenative adversaries and two of their variants.
 ## Experiments
 ### Adversarial Evaluation
 This experiment uses four types of concatenative adversaries on four models: Match-LSTM (single version), Match-LSTM (ensemble version), BiDAF model (single version) and BiDAF model (ensemble version).
+
 ![Image](/Adversarial.png){: .center-image height="50%" width="50%"}
 
 
