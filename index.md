@@ -68,8 +68,15 @@ The result shows that the performance of all models drop on every types adversar
 This experiment is to ensure that human can answer correctly after adding adversaries. As we can see in the below table, the accuracy of human prediction did not decrease a lot. 
 pic here
 
-###
-
+### What went wrong and what went right
+In adversarial evaluation, they devided the output of the models into two cases. 
+```
+1. model failure
+   The answer got wrong during adversarial evaluation.
+2. model success
+   The answer remain correct during adversarial evaluation.
+```
+In *ADDSENT* examples, 96.6% of 
  
 
 ## Welcome to GitHub Pages
