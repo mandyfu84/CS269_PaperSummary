@@ -67,7 +67,7 @@ This experiment uses four types of concatenative adversaries on four models: Mat
 ![Image](/Adversarial.png){:.center-image height="50%" width="50%"}
 
 
-The result shows that the performance of all models drop on every types adversary. They also ran *ADDSENT* on other 12 models and found that the average F1 score fell from 75.4% to 36.4%. This means that concatenative adversaries can indeed fool the model. 
+The result shows that the performance of all models drop on every types of adversary. They also ran *ADDSENT* on other 12 models and found that the average F1 score fell from 75.4% to 36.4%. This means that concatenative adversaries can indeed fool the model. 
 
 ### Human Evaluation
 This experiment is to ensure that human can answer correctly after adding adversaries. As we can see in the below table, the accuracy of human prediction did not decrease a lot. 
@@ -96,9 +96,9 @@ The performances on *ADDSENTMOD* on original model and augmented model are equal
 ![Image](/Training_on_Adversarial_Examples.png){:height="50%" width="50%"}
 
 ## Conclusion
-Though the accuracy of the recent models seems to reach human performance, they might not really understand the meaning in passage. With the adversarial examples, the models are still vulnerable. This suggests that people may have to come up with new model training methods to accommodate this problem.
+Though the accuracy of the recent models seems to reach human performance, they might not really understand the meaning of passage. With the adversarial examples, the models are still vulnerable. This suggests that people may have to come up with new model training methods to accommodate this problem.
 
 ## Reference
-All images and tables are from:
+All figures and tables are from:
 [Adversarial Examples for Evaluating Reading Comprehension Systems](http://aclweb.org/anthology/D17-1214) 
 
