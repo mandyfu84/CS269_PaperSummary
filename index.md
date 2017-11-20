@@ -1,31 +1,31 @@
-# Summary of Adversarial Examples for Evaluating Reaing Comprehension Systems
+# Summary of Adversarial Examples for Evaluating Reading Comprehension Systems
  by Robin Jia and Percy Liang
 
-## Abstrast
-In this paper, the authors proposed adversarial evaluation on Stanford Question Answering Datset (SQuAD). Without confusing humans, the generated sentance distrated the models and their average F1 score dropped from 75% to 36%. This indicates that nowadays
+## Abstract
+In this paper, the authors proposed adversarial evaluation on Stanford Question Answering Dataset (SQuAD). Without confusing humans, the generated sentence distracted the models and their average F1 score dropped from 75% to 36%. This indicates that nowadays
 the reading comprehension system techniques remain a large gap of improvement.
 
 ## SQuAD
-Stanford Question Answering Datset (SQuAD) is a reading comprehension dataset, consisting of questions posed by crowdworkers on a set of Wikipedia articles. Each question is refer to a paragraph and the answer is a span in the paragraph.
+Stanford Question Answering Dataset (SQuAD) is a reading comprehension dataset, consisting of questions posed by crowdworkers on a set of Wikipedia articles. Each question refers to a paragraph and the answer is a span in the paragraph.
 
 ## Adversarial Examples
 ![Image](/examples.png){:.center-image height="50%" width="50%"}
 
 Images from Szegedy et al. (2014).
 
-As we can see in the above table, adding adversaries in image classifications makes the model consider two images are diffirent while the perturbations do not change. For reading comprehension tasks, adversaries causes the model to ignore the semantics changes. 
+As we can see in the above table, adding adversaries in image classifications makes the model consider two images are different while the perturbations do not change. For reading comprehension tasks, adversaries cause the model to ignore the semantics changes. 
 
 ## Concatenative Adversaries
-In this paper, the authors did not use paraphrasing as adversaries, since it is challenging to edit sentence without changing its meaning. Instead, they use concatentive adversaries. The form is listed below:
+In this paper, the authors did not use paraphrasing as adversaries, since it is challenging to edit sentence without changing its meaning. Instead, they use concatenative adversaries. The form is listed below:
 ```markdown
 (p + s, q, a)
 ```
-, where p is a paragraph, s is a additional sentence, q is the question and a is the answer.
+, where p is a paragraph, s is an additional sentence, q is the question and a is the answer.
 
-Next they propose two concatenative adversaries and two of their variants. 
+Next, they propose two concatenative adversaries and two of their variants. 
 
 ### ADDSENT
-*ADDSENT* generates a sentence that is similar to the question but does not condradict the answer. There are four steps in *ADDSENT*.
+*ADDSENT* generates a sentence that is similar to the question but does not contradict the answer. There are four steps in *ADDSENT*.
 1.  Apply semantics-altering perturbation to the question.
     ```
     What city did Tesla move to in 1880? -> What city did Tadakatsu move to in 1881?
@@ -51,9 +51,9 @@ Next they propose two concatenative adversaries and two of their variants.
 
 ### ADDANY
 *ADDANY* generates a sentence `s` containing `d` words, `s = w1w2...wd`.
-1. Initailize `w1w2...wd`. Randomly choose words from common English words. 
+1. Initialize `w1w2...wd`. Randomly choose words from common English words. 
 2. Switch `wi` with word `x`. word `x` is in candidate words `W` where `W = union of 20 sampled common words and words in q`.
-3. Upade `wi` to minimze the F1 score of the model's output.
+3. Update `wi` to minimize the F1 score of the model's output.
 
 ![Image](/AddAny.png){:height="50%" width="50%"}
 
@@ -63,41 +63,42 @@ Next they propose two concatenative adversaries and two of their variants.
 
 ## Experiments
 ### Adversarial Evaluation
-This experiment uses four types of concatenative adversaries on four models: Match-LSTM (single version), Match-LSTM (essemble version), BiDAF model (single version) and BiDAF model (essemble version).
+This experiment uses four types of concatenative adversaries on four models: Match-LSTM (single version), Match-LSTM (ensemble version), BiDAF model (single version) and BiDAF model (ensemble version).
 ![Image](/Adversarial.png){:.center-image height="50%" width="50%"}
 
 
-The result shows that the performance of all models drop on every types adversaries. They also ran *ADDSENT* on other 12 models and found that the average F1 score fell from 75.4% to 36.4%. This means that concatenative adversaries can indeed fool the model. 
+The result shows that the performance of all models drop on every types adversary. They also ran *ADDSENT* on other 12 models and found that the average F1 score fell from 75.4% to 36.4%. This means that concatenative adversaries can indeed fool the model. 
 
-### Human Evalution
+### Human Evaluation
 This experiment is to ensure that human can answer correctly after adding adversaries. As we can see in the below table, the accuracy of human prediction did not decrease a lot. 
 ![Image](/Human.png){:.center-image height="50%" width="50%"}
 
 
 ### What Went Wrong and What Went Right
-In adversarial evaluation, they devided the output of the models into two cases:  
+In adversarial evaluation, they divided the output of the models into two cases:  
 1. Model failure: The answer got wrong during adversarial evaluation.
-2. Model success: The answer remain correct during adversarial evaluation.
+2. Model success: The answer remains correct during adversarial evaluation.
 
-In *ADDSENT* examples, 96.6% of the model failures predict a span in the adversarial sentence. For model successe, it usually happens when the question has n-gram match in the original paragraph. In addition, the model does well when the question is shorter. 
+In *ADDSENT* examples, 96.6% of the model failures predict a span in the adversarial sentence. For model success, it usually happens when the question has n-gram match in the original paragraph. In addition, the model does well when the question is shorter. 
 
 ### Transferability across Models
-Here "Transferability" means that an adversarial example that fools one model can also fool another. The result shows that *ADDSENT* has good transferability while *ADDANY* is quite limited in transfering between models. 
+Here "Transferability" means that an adversarial example that fools one model can also fool another. The result shows that *ADDSENT* has good transferability while *ADDANY* is quite limited in transferring between models. 
 
 ![Image](/Transferability.png){:height="50%" width="50%"}
 
 
-## Trainig on Adversarial Models
-In this experiment, they trained the BiDAF Single model with *ADDSENT* examples and compare the perfromance with the original trianing data. Though it seems that after training, the accuracy on *ADDSENT* examples increases, the improvement is actually limited. To prove this, they modified *ADDSENT* in two ways and called it *ADDSENTMOD*. The two differences are:
+## Training on Adversarial Models
+In this experiment, they trained the BiDAF Single model with *ADDSENT* examples and compare the performance with the original training data. Though it seems that after training, the accuracy on *ADDSENT* examples increase, the improvement is actually limited. To prove this, they modified *ADDSENT* in two ways and called it *ADDSENTMOD*. The two differences are:
 1. Use different fake answer in step 2. 
-2. Add the adversarial sentence in the begining of the paragraph instead of adding it in the end of the paragraph.
-The performances on *ADDSENTMOD* on orginal model and augmented model are equally bad since the model just rejected the fake answer and ignored the last appended sentence.
+2. Add the adversarial sentence in the beginning of the paragraph instead of adding it in the end of the paragraph.
+The performances on *ADDSENTMOD* on original model and augmented model are equally bad since the model just rejected the fake answer and ignored the last appended sentence.
 
 ![Image](/Training_on_Adversarial_Examples.png){:height="50%" width="50%"}
 
 ## Conclusion
-Though the accuarcy of the recent models seem to reach human performance, they might not really understand the meaning in passage. With the adversarial examples, the models are still vulnerable. This suggests that people may have to come up with new model training methods to accomodate this problem.
+Though the accuracy of the recent models seems to reach human performance, they might not really understand the meaning in passage. With the adversarial examples, the models are still vulnerable. This suggests that people may have to come up with new model training methods to accommodate this problem.
 
 ## Reference
 All images and tables are from:
 [Adversarial Examples for Evaluating Reading Comprehension Systems](http://aclweb.org/anthology/D17-1214) 
+
