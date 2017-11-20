@@ -86,7 +86,6 @@ In this experiment, they trained the BiDAF Single model with *ADDSENT* examples 
 2. Add the adversarial sentence in the begining of the paragraph instead of adding it in the end of the paragraph.
 The performances on *ADDSENTMOD* on orginal model and augmented model are equally bad since the model just rejected the fake answer and ignored the last appended sentence.
 ![Image](/Training_on_Adversarial_Examples.png){:height="50%" width="50%"}
-
 <img src="/Training_on_Adversarial_Examples.png" width="50%" >
 
 ## Conclusion
