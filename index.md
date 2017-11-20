@@ -4,14 +4,13 @@
 ## Abstrast
 In this paper, the authors proposed adversarial evaluation on Stanford Question Answering Datset (SQuAD). Without confusing humans, the generated sentance distrated the models and their average F1 score dropped from 75% to 36%. This indicates that nowadays
 the reading comprehension system techniques remain a large gap of improvement.
-## 
-![Image](/1.png)
 
 ## SQuAD
 Stanford Question Answering Datset (SQuAD) is a reading comprehension dataset, consisting of questions posed by crowdworkers on a set of Wikipedia articles. Each question is refer to a paragraph and the answer is a span in the paragraph.
 
 ## Adversarial Examples
-![Image](/examples.png){: .center-image }
+![Image](/examples.png){:height="50%" width="50%" .center-image }
+
 Images from Szegedy et al. (2014).
 
 As we can see in the above table, adding adversaries in image classifications makes the model consider two images are diffirent while the perturbations do not change. For reading comprehension tasks, adversaries causes the model to ignore the semantics changes. 
