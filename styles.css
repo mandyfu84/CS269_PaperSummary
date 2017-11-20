@@ -1,4 +1,8 @@
-/* To center images */
-.center {
-    text-align: center;
+ .center {
+     text-align: center;
+ }
+.center-image {
+    margin: 0 auto;
+    display: block;
 }
+ 
