@@ -68,15 +68,17 @@ The result shows that the performance of all models drop on every types adversar
 This experiment is to ensure that human can answer correctly after adding adversaries. As we can see in the below table, the accuracy of human prediction did not decrease a lot. 
 pic here
 
-### What went wrong and what went right
+### What Went Wrong and What Went Right
 In adversarial evaluation, they devided the output of the models into two cases. 
 ```markdown
-1. model failure
+1. Model failure
    The answer got wrong during adversarial evaluation.
-2. model success
+2. Model success
    The answer remain correct during adversarial evaluation.
 ```
-In *ADDSENT* examples, 96.6% of 
+In *ADDSENT* examples, 96.6% of the model failures predict a span in the adversarial sentence. For model successe, it usually happens when the question has n-gram match in the original paragraph. In addition, the model does well when the question is shorter. 
+
+### Transferability across Models
  
 
 ## Welcome to GitHub Pages
