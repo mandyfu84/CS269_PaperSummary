@@ -9,7 +9,7 @@ the reading comprehension system techniques remain a large gap of improvement.
 Stanford Question Answering Datset (SQuAD) is a reading comprehension dataset, consisting of questions posed by crowdworkers on a set of Wikipedia articles. Each question is refer to a paragraph and the answer is a span in the paragraph.
 
 ## Adversarial Examples
-![Image](/examples.png){:height="50%" width="50%" .center-image }
+![Image](/examples.png){:.center-image height="50%" width="50%"}
 
 Images from Szegedy et al. (2014).
 
@@ -64,13 +64,15 @@ Next they propose two concatenative adversaries and two of their variants.
 ## Experiments
 ### Adversarial Evaluation
 This experiment uses four types of concatenative adversaries on four models: Match-LSTM (single version), Match-LSTM (essemble version), BiDAF model (single version) and BiDAF model (essemble version).
-pic here
+![Image](/Adversarial.png){:.center-image height="50%" width="50%"}
+
 
 The result shows that the performance of all models drop on every types adversaries. They also ran *ADDSENT* on other 12 models and found that the average F1 score fell from 75.4% to 36.4%. This means that concatenative adversaries can indeed fool the model. 
 
 ### Human Evalution
 This experiment is to ensure that human can answer correctly after adding adversaries. As we can see in the below table, the accuracy of human prediction did not decrease a lot. 
-pic here
+![Image](/Human.png){:.center-image height="50%" width="50%"}
+
 
 ### What Went Wrong and What Went Right
 In adversarial evaluation, they devided the output of the models into two cases:  
@@ -96,5 +98,6 @@ The performances on *ADDSENTMOD* on orginal model and augmented model are equall
 ## Conclusion
 Though the accuarcy of the recent models seem to reach human performance, they might not really understand the meaning in passage. With the adversarial examples, the models are still vulnerable. This suggests that people may have to come up with new model training methods to accomodate this problem.
 
-
-[Link](url) and ![Image](src)
+## Reference
+All images and tables are from:
+[Adversarial Examples for Evaluating Reading Comprehension Systems](http://aclweb.org/anthology/D17-1214) 
