@@ -43,7 +43,7 @@ Next, they propose two concatenative adversaries and two of their variants.
     Tadakatsu moved to the city of Chicago in 1881.
     ```
 
-![Image](/AddSent.png){:height="50%" width="50%"}
+![Image](/AddSent.png){: .center-image height="50%" width="50%"}
 
     
 ### ADDONESENT
@@ -55,7 +55,7 @@ Next, they propose two concatenative adversaries and two of their variants.
 2. Switch `wi` with word `x`. word `x` is in candidate words `W` where `W = union of 20 sampled common words and words in q`.
 3. Update `wi` to minimize the F1 score of the model's output.
 
-![Image](/AddAny.png){:height="50%" width="50%"}
+![Image](/AddAny.png){: .center-image height="50%" width="50%"}
 
 ### ADDCOMMON
 *ADDCOMMON* is same as *ADDANY* but only adds common words.
@@ -64,14 +64,14 @@ Next, they propose two concatenative adversaries and two of their variants.
 ## Experiments
 ### Adversarial Evaluation
 This experiment uses four types of concatenative adversaries on four models: Match-LSTM (single version), Match-LSTM (ensemble version), BiDAF model (single version) and BiDAF model (ensemble version).
-![Image](/Adversarial.png){:.center-image height="50%" width="50%"}
+![Image](/Adversarial.png){: .center-image height="50%" width="50%"}
 
 
 The result shows that the performance of all models drop on every types of adversary. They also ran *ADDSENT* on other 12 models and found that the average F1 score fell from 75.4% to 36.4%. This means that concatenative adversaries can indeed fool the model. 
 
 ### Human Evaluation
 This experiment is to ensure that human can answer correctly after adding adversaries. As we can see in the below table, the accuracy of human prediction did not decrease a lot. 
-![Image](/Human.png){:.center-image height="50%" width="50%"}
+![Image](/Human.png){: .center-image height="50%" width="50%"}
 
 
 ### What Went Wrong and What Went Right
@@ -84,7 +84,7 @@ In *ADDSENT* examples, 96.6% of the model failures predict a span in the adversa
 ### Transferability across Models
 Here "Transferability" means that an adversarial example that fools one model can also fool another. The result shows that *ADDSENT* has good transferability while *ADDANY* is quite limited in transferring between models. 
 
-![Image](/Transferability.png){:height="50%" width="50%"}
+![Image](/Transferability.png){: .center-image height="50%" width="50%"}
 
 
 ## Training on Adversarial Models
@@ -93,7 +93,7 @@ In this experiment, they trained the BiDAF Single model with *ADDSENT* examples 
 2. Add the adversarial sentence in the beginning of the paragraph instead of adding it in the end of the paragraph.
 The performances on *ADDSENTMOD* on original model and augmented model are equally bad since the model just rejected the fake answer and ignored the last appended sentence.
 
-![Image](/Training_on_Adversarial_Examples.png){:height="50%" width="50%"}
+![Image](/Training_on_Adversarial_Examples.png){: .center-image height="50%" width="50%"}
 
 ## Conclusion
 Though the accuracy of the recent models seems to reach human performance, they might not really understand the meaning of passage. With the adversarial examples, the models are still vulnerable. This suggests that people may have to come up with new model training methods to accommodate this problem.
