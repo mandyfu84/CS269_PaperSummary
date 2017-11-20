@@ -43,6 +43,9 @@ Next they propose two concatenative adversaries and two of their variants.
     ```
     Tadakatsu moved to the city of Chicago in 1881.
     ```
+
+![Image](/AddSent.png){:height="50%" width="50%"}
+
     
 ### ADDONESENT
 *ADDONESENT* adds a random human-approve sentence. It does not require any queries to the model. 
@@ -52,6 +55,8 @@ Next they propose two concatenative adversaries and two of their variants.
 1. Initailize `w1w2...wd`. Randomly choose words from common English words. 
 2. Switch `wi` with word `x`. word `x` is in candidate words `W` where `W = union of 20 sampled common words and words in q`.
 3. Upade `wi` to minimze the F1 score of the model's output.
+
+![Image](/AddAny.png){:height="50%" width="50%"}
 
 ### ADDCOMMON
 *ADDCOMMON* is same as *ADDANY* but only adds common words.
@@ -77,7 +82,8 @@ In *ADDSENT* examples, 96.6% of the model failures predict a span in the adversa
 
 ### Transferability across Models
 Here "Transferability" means that an adversarial example that fools one model can also fool another. The result shows that *ADDSENT* has good transferability while *ADDANY* is quite limited in transfering between models. 
-<img src="/Transferability.png" width="50%" >
+
+![Image](/Transferability.png){:height="50%" width="50%"}
 
 
 ## Trainig on Adversarial Models
@@ -85,8 +91,8 @@ In this experiment, they trained the BiDAF Single model with *ADDSENT* examples 
 1. Use different fake answer in step 2. 
 2. Add the adversarial sentence in the begining of the paragraph instead of adding it in the end of the paragraph.
 The performances on *ADDSENTMOD* on orginal model and augmented model are equally bad since the model just rejected the fake answer and ignored the last appended sentence.
+
 ![Image](/Training_on_Adversarial_Examples.png){:height="50%" width="50%"}
-<img src="/Training_on_Adversarial_Examples.png" width="50%" >
 
 ## Conclusion
 Though the accuarcy of the recent models seem to reach human performance, they might not really understand the meaning in passage. With the adversarial examples, the models are still vulnerable. This suggests that people may have to come up with new model training methods to accomodate this problem.
