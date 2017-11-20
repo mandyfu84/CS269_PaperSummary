@@ -9,7 +9,7 @@ the reading comprehension system techniques remain a large gap of improvement.
 Stanford Question Answering Dataset (SQuAD) is a reading comprehension dataset, consisting of questions posed by crowdworkers on a set of Wikipedia articles. Each question refers to a paragraph and the answer is a span in the paragraph.
 
 ## Adversarial Examples
-![Image](/examples.png){: .center height="50%" width="50%"}
+![Image](/examples.png){: .center-image height="50%" width="50%"}
 
 Images from Szegedy et al. (2014).
 
