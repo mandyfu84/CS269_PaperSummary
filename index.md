@@ -101,7 +101,7 @@ The performances on *ADDSENTMOD* on original model and augmented model are equal
 ![Image](/Training_on_Adversarial_Examples.png){: .center-image height="50%" width="50%"}
 
 ## Conclusion
-Though the accuracy of the recent models seems to reach human performance, they might not really understand the meaning of passage. With the adversarial examples, the models are still vulnerable. This suggests that people may have to come up with new model training methods to accommodate this problem.
+Though the accuracies of the recent models seem to reach human performance, the models might not really understand the meaning of passage. With the adversarial examples, the models are still vulnerable. This suggests that people may have to come up with new model training methods to accommodate this problem.
 
 ## Reference
 All figures and tables are from:
