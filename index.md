@@ -71,7 +71,8 @@ The result shows that the performance of all models drop on every types of adver
 
 ### Human Evaluation
 This experiment is to ensure that human can answer correctly after adding adversaries. As we can see in the below table, the accuracy of human prediction did not decrease a lot. 
-![Image](/Human.png){: .center-image height="50%" width="50%"}
+
+![Image](/Human.png){: .center-image height="30%" width="30%"}
 
 
 ### What Went Wrong and What Went Right
