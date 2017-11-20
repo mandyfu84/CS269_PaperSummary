@@ -77,14 +77,14 @@ In *ADDSENT* examples, 96.6% of the model failures predict a span in the adversa
 
 ### Transferability across Models
 Here "Transferability" means that an adversarial example that fools one model can also fool another. The result shows that *ADDSENT* has good transferability while *ADDANY* is quite limited in transfering between models. 
-[Image](/Transferability.png)
+![Image](/Transferability.png | width=100)
 
 ## Trainig on Adversarial Models
 In this experiment, they trained the BiDAF Single model with *ADDSENT* examples and compare the perfromance with the original trianing data. Though it seems that after training, the accuracy on *ADDSENT* examples increases, the improvement is actually limited. To prove this, they modified *ADDSENT* in two ways and called it *ADDSENTMOD*. The two differences are:
 1. Use different fake answer in step 2. 
 2. Add the adversarial sentence in the begining of the paragraph instead of adding it in the end of the paragraph.
 The performances on *ADDSENTMOD* on orginal model and augmented model are equally bad since the model just rejected the fake answer and ignored the last appended sentence.
-[Image](/Training_on_Adversarial_Examples.png)
+![Image](/Training_on_Adversarial_Examples.png){:height="50%" width="50%"}
 
 
 ## Conclusion
