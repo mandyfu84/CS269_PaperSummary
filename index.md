@@ -58,9 +58,13 @@ Next they propose two concatenative adversaries and two of their variants.
 
 
 ## Experiments
+# Adversarial Evaluation
+This experiment uses four types of concatenative adversaries on four models: Match-LSTM (single version), Match-LSTM (essemble version), BiDAF model (single version) and BiDAF model (essemble version).
+pic here
+
+The result shows that the performance of all models drop on every types adversaries. They also ran *ADDSENT* on other 12 models and found that the average F1 score fell from 75.4% to 36.4%. This means that concatenative adversaries can indeed fool the model. 
 
 
-pertubations 
 
 ## Welcome to GitHub Pages
 
